@@ -1,9 +1,11 @@
 import React from 'react'
 import DetailsPage from './DetailsPage'
+import AddPage from './AddPage'
 function App() {
   return (
     <div>
-      <DetailsPage/>
+      {/* <DetailsPage/> */}
+      <AddPage/>
     </div>
   )
 }
