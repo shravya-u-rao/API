@@ -6,9 +6,21 @@ function DetailsPage() {
   useEffect(() => {
     axios
       .get("http://localhost:8000/notes")
-      .then((res) => setData(res.data))
+      .then((res) => {setData(res.data)
+      console.log(res.data);}
+      )
+      
       .catch((err) => console.log(err));
   }, []);
+
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`http://localhost:8000/notes/${id}`);
+      setData(data.filter((item) => item.id !== id));
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <div className="container">
@@ -21,6 +33,7 @@ function DetailsPage() {
                 <th>title</th>
                 <th>description</th>
                 <th>color</th>
+                {/* <th>Image</th> */}
             </tr>
            </thead>
            <tbody>
@@ -31,6 +44,12 @@ function DetailsPage() {
                         <td>{user.title}</td>
                         <td>{user.description}</td>
                         <td>{user.color}</td>
+                        {/* <td>{user.image}</td> */}
+                        <td>
+                    <button onClick={() => handleDelete(user.id)}>
+                      Delete
+                    </button>
+                  </td>
                     </tr>
                 })
             }

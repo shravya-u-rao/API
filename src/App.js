@@ -4,8 +4,8 @@ import AddPage from './AddPage'
 function App() {
   return (
     <div>
-      {/* <DetailsPage/> */}
-      <AddPage/>
+      <DetailsPage/>
+      {/* <AddPage/> */}
     </div>
   )
 }
