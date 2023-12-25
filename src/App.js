@@ -1,11 +1,13 @@
 import React from 'react'
 import DetailsPage from './DetailsPage'
 import AddPage from './AddPage'
+import Quiz from './Quiz'
 function App() {
   return (
     <div>
-      <DetailsPage/>
+      {/* <DetailsPage/> */}
       {/* <AddPage/> */}
+      <Quiz/>
     </div>
   )
 }
